@@ -9,9 +9,10 @@ from sklearn.preprocessing import StandardScaler
 
 # Correct the file path and delimiter according to the image provided
 df = pd.read_csv('/Users/varunsharma/Desktop/BCI_Car/BCI-CAR-Spring24/final_compiled.csv', delimiter=',')
-
+#df = df.drop(['C3','C4'], axis=1)
 # Assuming the last column is the target 'y' and the rest are features 'X'
 X = df.iloc[:, :-1].values  # All columns except the last one
+print(X)
 y = df.iloc[:, -1].values   # The last column
 
 # Convert the 'y' values to a numeric representation (classification)
